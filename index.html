@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- ========================================================================= -->
+  <!-- 📌 PERSONALIZATION PLACEHOLDER METADATA -->
+  <!-- Name: SOMYA JHALANI | College: JECRC UNIVERSITY | Email: SOMYAJHALANI@gmail.com -->
+  <!-- ========================================================================= -->
+  <title>Somya Jhalani · B.Tech CSE Portfolio | JECRC University</title>
+  <meta name="title" content="Somya Jhalani · B.Tech CSE Portfolio | JECRC University" />
+  <meta name="description" content="Personal portfolio and Digital Literacy course capstone for Somya Jhalani, 1st-Year B.Tech Computer Science & Engineering student at JECRC University." />
+  <meta name="author" content="Somya Jhalani" />
+  <meta name="keywords" content="Somya Jhalani, JECRC University, Digital Literacy, Portfolio, B.Tech CSE, Computer Science, Jaipur" />
+  
+  <!-- Open Graph / Social Sharing Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Somya Jhalani · B.Tech CSE & Digital Literacy Portfolio" />
+  <meta property="og:description" content="Crafting software from first principles & exploring modern computing. 1st-Year B.Tech Student at JECRC University." />
+  <meta property="og:site_name" content="Somya Jhalani Portfolio" />
+
+  <!-- Favicon (Minimalist Monogram SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2309090b'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='42' fill='%23f4f4f5'%3ESJ%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts: Inter & Geist Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN with Custom Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['Geist Mono', 'JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            canvas: '#09090b',
+            surface: 'rgba(255, 255, 255, 0.02)',
+            surfaceHover: 'rgba(255, 255, 255, 0.05)',
+            hairline: 'rgba(255, 255, 255, 0.09)',
+          },
+          animation: {
+            'glow-pulse': 'glow 4s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            glow: {
+              '0%': { opacity: '0.35', transform: 'scale(0.98)' },
+              '100%': { opacity: '0.65', transform: 'scale(1.02)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons (Browser Bundle) -->
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js"></script>
+
+  <style>
+    /* Selection & Smooth Scroll Styling */
+    ::selection {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3f3f46;
+    }
+
+    /* Subtle background grid pattern inspired by Linear & Vercel */
+    .bg-grid-mesh {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+    }
+
+    /* Minimalist card hover micro-interaction */
+    .card-hover {
+      transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(255, 255, 255, 0.04);
+    }
+
+    /* Print styles for CV */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      #resume-modal {
+        position: static !important;
+        background: none !important;
+        padding: 0 !important;
+      }
+      #resume-modal-dialog {
+        box-shadow: none !important;
+        border: none !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#09090b] text-zinc-100 font-sans antialiased selection:bg-zinc-800 selection:text-white min-h-screen flex flex-col relative overflow-x-hidden">
+
+  <!-- ========================================================================= -->
+  <!-- AMBIENT CANVAS BACKGROUND (Linear / Apple / Vercel style radial glow) -->
+  <!-- ========================================================================= -->
+  <div class="fixed inset-0 bg-grid-mesh pointer-events-none z-0"></div>
+  <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-[780px] h-[380px] bg-gradient-to-tr from-sky-500/10 via-indigo-500/10 to-emerald-500/10 blur-[130px] pointer-events-none rounded-full animate-glow-pulse z-0"></div>
+  <div class="fixed top-1/2 -right-48 w-[450px] h-[450px] bg-purple-500/5 blur-[150px] pointer-events-none rounded-full z-0"></div>
+
+  <!-- ========================================================================= -->
+  <!-- TOAST NOTIFICATION COMPONENT -->
+  <!-- ========================================================================= -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-zinc-900/95 text-white border border-white/10 px-4 py-3 rounded-xl shadow-2xl backdrop-blur-xl">
+    <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+      <i data-lucide="check" class="w-3.5 h-3.5"></i>
+    </div>
+    <span id="toast-message" class="text-xs font-medium tracking-wide">Copied to clipboard!</span>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. FLOATING NAVIGATION BAR (Sticky Glassmorphic Pill) -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-4 z-40 px-4 sm:px-6 w-full max-w-5xl mx-auto">
+    <nav class="relative backdrop-blur-xl bg-zinc-950/75 border border-white/10 rounded-2xl px-4 py-2.5 flex items-center justify-between shadow-2xl shadow-black/60 transition-all duration-200">
+      
+      <!-- Brand Logo / Monogram -->
+      <!-- [CUSTOMIZE: Logo & Subtitle] -->
+      <a href="#" class="group flex items-center gap-2.5 focus:outline-none">
+        <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-mono font-bold text-sm tracking-wider text-zinc-200 group-hover:border-white/30 group-hover:bg-white/10 group-hover:text-white transition-all duration-200">
+          SJ
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs font-semibold text-zinc-100 tracking-tight group-hover:text-white transition-colors">Somya Jhalani</span>
+          <span class="text-[10px] text-zinc-400 font-mono">JECRC University</span>
+        </div>
+      </a>
+
+      <!-- Desktop Smooth Scroll Links -->
+      <div class="hidden md:flex items-center gap-1 text-xs font-medium text-zinc-400">
+        <a href="#about" class="px-3 py-1.5 rounded-lg hover:text-zinc-100 hover:bg-white/5 transition-all">About</a>
+        <a href="#skills" class="px-3 py-1.5 rounded-lg hover:text-zinc-100 hover:bg-white/5 transition-all">Skills & Literacy</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg hover:text-zinc-100 hover:bg-white/5 transition-all">Projects</a>
+        <a href="#coursework" class="px-3 py-1.5 rounded-lg hover:text-zinc-100 hover:bg-white/5 transition-all">Coursework</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg hover:text-zinc-100 hover:bg-white/5 transition-all">Contact</a>
+      </div>
+
+      <!-- Action Button (Pill Style) & Mobile Hamburger -->
+      <div class="flex items-center gap-2">
+        <button onclick="openResumeModal()" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-950 bg-white hover:bg-zinc-200 px-3.5 py-1.5 rounded-full transition-all duration-200 shadow-sm hover:scale-[1.02] active:scale-[0.98]">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span>View CV</span>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden mt-2 p-3 backdrop-blur-xl bg-zinc-950/95 border border-white/10 rounded-2xl flex flex-col gap-1 text-sm text-zinc-300 shadow-2xl">
+      <a href="#about" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-colors">About</a>
+      <a href="#skills" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-colors">Skills & Literacy</a>
+      <a href="#projects" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-colors">Projects</a>
+      <a href="#coursework" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-colors">Coursework & Milestones</a>
+      <a href="#contact" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-colors">Contact</a>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- MAIN CONTENT CONTAINER -->
+  <!-- ========================================================================= -->
+  <main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 relative z-10 space-y-24 pt-10 pb-20">
+
+    <!-- ========================================================================= -->
+    <!-- 2. HERO SECTION -->
+    <!-- ========================================================================= -->
+    <section id="about" class="pt-6 sm:pt-10 flex flex-col items-start gap-8">
+      
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs text-zinc-300 tracking-tight backdrop-blur-md">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="font-medium text-zinc-200">1st Year B.Tech Student</span>
+        <span class="text-zinc-500">|</span>
+        <span class="text-zinc-400 font-mono">JECRC University</span>
+        <span class="text-zinc-500 hidden sm:inline">|</span>
+        <span class="text-zinc-400 hidden sm:inline">Open to Collaborations</span>
+      </div>
+
+      <!-- Bold, Minimal Headline -->
+      <div class="space-y-4 max-w-3xl">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+          Crafting software from first principles &amp; exploring modern computing.
+        </h1>
+        <!-- 2-sentence bio emphasizing curiosity, engineering foundations, and digital literacy -->
+        <p class="text-base sm:text-lg text-zinc-400 leading-relaxed font-normal">
+          First-year Computer Science &amp; Engineering undergraduate at <span class="text-zinc-200 font-medium">JECRC University</span> with an insatiable curiosity for system internals, software foundations, and technical digital literacy. Passionate about deconstructing complex technologies—from binary data representation to responsive, minimalist user interfaces.
+        </p>
+      </div>
+
+      <!-- Primary & Secondary CTAs + Quick Social Links -->
+      <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+        <!-- Primary CTA -->
+        <a href="#projects" class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold bg-white text-zinc-950 hover:bg-zinc-200 px-5 py-2.5 rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-white/5">
+          <span>Explore Projects</span>
+          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Secondary CTA -->
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-medium bg-white/[0.04] hover:bg-white/[0.08] text-zinc-200 border border-white/10 px-5 py-2.5 rounded-xl transition-all duration-200 hover:border-white/20">
+          <span>Get in Touch</span>
+          <i data-lucide="mail" class="w-4 h-4 text-zinc-400"></i>
+        </a>
+
+        <!-- Quick Social Icon Links -->
+        <!-- [CUSTOMIZE: Social profile URLs] -->
+        <div class="flex items-center gap-2 sm:ml-4 border-t sm:border-t-0 sm:border-l border-white/10 pt-3 sm:pt-0 sm:pl-4 w-full sm:w-auto">
+          <!-- GitHub -->
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-all hover:scale-105" title="GitHub Profile">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-all hover:scale-105" title="LinkedIn Profile">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <!-- X (Twitter) -->
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-all hover:scale-105" title="X Profile">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <!-- One-Click Copy Email -->
+          <button onclick="copyEmail('SOMYAJHALANI@gmail.com')" class="p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-all flex items-center gap-2 hover:scale-105" title="Click to Copy Email">
+            <i data-lucide="copy" class="w-4 h-4 text-emerald-400"></i>
+            <span class="text-xs font-mono text-zinc-300 hidden lg:inline">SOMYAJHALANI@gmail.com</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Linear / Terminal Style Interactive First-Principles Dossier -->
+      <div class="w-full mt-2 backdrop-blur-md bg-zinc-950/70 border border-white/10 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:border-white/20">
+        <!-- Terminal Bar -->
+        <div class="flex items-center justify-between px-4 py-2.5 bg-white/[0.02] border-b border-white/10 text-xs font-mono text-zinc-400">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block"></span>
+            <span class="ml-2 text-zinc-400">jecrc-terminal · student@somya:~/digital-literacy</span>
+          </div>
+          <span class="text-[11px] text-zinc-400">B.Tech Semester 1 &amp; 2</span>
+        </div>
+        <!-- Terminal Body -->
+        <div class="p-5 font-mono text-xs sm:text-[13px] leading-relaxed space-y-2 text-zinc-300">
+          <p><span class="text-emerald-400">somya@jecrc</span>:<span class="text-sky-400">~</span>$ whoami --verbose</p>
+          <p class="text-zinc-400 pl-4">→ Name: Somya Jhalani | College: JECRC University, Jaipur</p>
+          <p class="text-zinc-400 pl-4">→ Degree: B.Tech Computer Science &amp; Engineering | Course: Digital Literacy</p>
+          <p class="text-zinc-400 pl-4">→ Core Focus: System Principles, Data Representation, Linux CLI, Clean Code</p>
+          <p><span class="text-emerald-400">somya@jecrc</span>:<span class="text-sky-400">~</span>$ cat mission.txt</p>
+          <p class="text-zinc-200 pl-4 italic">"Mastering computational fundamentals and technical digital literacy to build robust, ethical, and elegant software."</p>
+          <div class="flex items-center gap-2 text-zinc-400 pt-1">
+            <span class="text-emerald-400">somya@jecrc</span>:<span class="text-sky-400">~</span>$ <span class="animate-pulse">▍</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3. DIGITAL LITERACY & CORE SKILLS (Bento Grid Layout) -->
+    <!-- ========================================================================= -->
+    <section id="skills" class="space-y-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 uppercase tracking-widest">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span>Curriculum &amp; Competencies</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">Digital Literacy &amp; Core Skills</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-md">
+          Structured bento layout spanning programming foundations, digital literacy tools, systems architecture, and cyber ethics.
+        </p>
+      </div>
+
+      <!-- Bento Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- Bento Card 1: Programming & Scripting (Span 2 Columns) -->
+        <div class="md:col-span-2 backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                <i data-lucide="code-2" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[11px] font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/5 border border-white/5">01 · Programming</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white tracking-tight">Programming &amp; Scripting</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1.5 leading-relaxed">
+              Writing clean, efficient code from first principles. Understanding pointers, memory allocation in C, and rapid algorithmic problem-solving with Python and the modern web stack.
+            </p>
+          </div>
+
+          <!-- Clean Pill Badges -->
+          <div class="mt-6 flex flex-wrap gap-2">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-xs font-medium text-zinc-200">
+              <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+              <span>Python</span>
+              <span class="text-[10px] text-zinc-400">Scripting &amp; Algorithms</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-xs font-medium text-zinc-200">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+              <span>C / C++</span>
+              <span class="text-[10px] text-zinc-400">Memory &amp; Pointers</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-xs font-medium text-zinc-200">
+              <span class="w-2 h-2 rounded-full bg-orange-400"></span>
+              <span>HTML5</span>
+              <span class="text-[10px] text-zinc-400">Semantic Structure</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-xs font-medium text-zinc-200">
+              <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+              <span>CSS3 &amp; Tailwind</span>
+              <span class="text-[10px] text-zinc-400">Responsive UI</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-xs font-medium text-zinc-200">
+              <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+              <span>JavaScript</span>
+              <span class="text-[10px] text-zinc-400">DOM &amp; ES6+</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento Card 2: Digital Literacy & Productivity (Span 1 Column) -->
+        <div class="backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400">
+                <i data-lucide="terminal" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[11px] font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/5 border border-white/5">02 · Productivity</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white tracking-tight">Digital Literacy &amp; Productivity</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1.5 leading-relaxed">
+              Standard tools and developer hygiene for modern technical workflow and collaboration.
+            </p>
+          </div>
+
+          <div class="mt-6 space-y-2.5">
+            <div class="flex items-center justify-between text-xs text-zinc-300 pb-1.5 border-b border-white/5">
+              <span class="flex items-center gap-2"><i data-lucide="git-branch" class="w-3.5 h-3.5 text-orange-400"></i> Git &amp; GitHub</span>
+              <span class="text-zinc-400 font-mono text-[11px]">Version Control</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-zinc-300 pb-1.5 border-b border-white/5">
+              <span class="flex items-center gap-2"><i data-lucide="terminal" class="w-3.5 h-3.5 text-emerald-400"></i> Linux &amp; Bash</span>
+              <span class="text-zinc-400 font-mono text-[11px]">CLI &amp; Navigation</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-zinc-300 pb-1.5 border-b border-white/5">
+              <span class="flex items-center gap-2"><i data-lucide="book-open" class="w-3.5 h-3.5 text-purple-400"></i> Markdown &amp; Obsidian</span>
+              <span class="text-zinc-400 font-mono text-[11px]">PKM &amp; Notes</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-zinc-300">
+              <span class="flex items-center gap-2"><i data-lucide="file-code" class="w-3.5 h-3.5 text-sky-400"></i> LaTeX &amp; Office Suites</span>
+              <span class="text-zinc-400 font-mono text-[11px]">Technical Docs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento Card 3: Cyber Safety & Digital Ethics (Span 1 Column) -->
+        <div class="backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[11px] font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/5 border border-white/5">03 · Ethics</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white tracking-tight">Digital Ethics &amp; Cyber Safety</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1.5 leading-relaxed">
+              Navigating privacy laws, password entropy standards, phishing mitigation, metadata leaks, and open-source licenses.
+            </p>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md bg-zinc-900 text-[11px] text-zinc-300 border border-white/5">Digital Privacy</span>
+            <span class="px-2.5 py-1 rounded-md bg-zinc-900 text-[11px] text-zinc-300 border border-white/5">2FA Security</span>
+            <span class="px-2.5 py-1 rounded-md bg-zinc-900 text-[11px] text-zinc-300 border border-white/5">Data Sovereignty</span>
+            <span class="px-2.5 py-1 rounded-md bg-zinc-900 text-[11px] text-zinc-300 border border-white/5">Open Source Law</span>
+          </div>
+        </div>
+
+        <!-- Bento Card 4: Foundational Competencies & Architecture (Span 2 Columns) -->
+        <div class="md:col-span-2 backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[11px] font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/5 border border-white/5">04 · Architecture</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white tracking-tight">Foundational Competencies &amp; Architecture</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1.5 leading-relaxed">
+              From Boolean logic gates and two's complement arithmetic to the TCP/IP stack and internet client-server communication models.
+            </p>
+          </div>
+
+          <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="p-3 rounded-xl bg-zinc-900/60 border border-white/5 text-center">
+              <span class="text-xs font-mono text-emerald-400 block font-semibold">Binary &amp; Hex</span>
+              <span class="text-[11px] text-zinc-400">Radix Conversion</span>
+            </div>
+            <div class="p-3 rounded-xl bg-zinc-900/60 border border-white/5 text-center">
+              <span class="text-xs font-mono text-sky-400 block font-semibold">Two's Compl.</span>
+              <span class="text-[11px] text-zinc-400">Signed Arithmetic</span>
+            </div>
+            <div class="p-3 rounded-xl bg-zinc-900/60 border border-white/5 text-center">
+              <span class="text-xs font-mono text-violet-400 block font-semibold">TCP/IP &amp; DNS</span>
+              <span class="text-[11px] text-zinc-400">Web Networking</span>
+            </div>
+            <div class="p-3 rounded-xl bg-zinc-900/60 border border-white/5 text-center">
+              <span class="text-xs font-mono text-amber-400 block font-semibold">Logic Gates</span>
+              <span class="text-[11px] text-zinc-400">AND/OR/XOR Logic</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- INTERACTIVE DIGITAL LITERACY LAB (Live In-Browser Data Representation) -->
+      <!-- Demonstrates real-time binary & hexadecimal ASCII encoding for course submission -->
+      <!-- ========================================================================= -->
+      <div class="backdrop-blur-md bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-7 shadow-2xl space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <i data-lucide="binary" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm sm:text-base font-semibold text-white tracking-tight">Interactive Digital Literacy Lab: Data Representation</h4>
+              <p class="text-xs text-zinc-400">Type any text below to inspect real-time 8-bit ASCII binary and hexadecimal memory encoding.</p>
+            </div>
+          </div>
+          <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20 w-fit">Live Demonstration</span>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label for="binary-input" class="block text-xs font-mono text-zinc-400 mb-1.5">Input text or phrase:</label>
+            <input 
+              type="text" 
+              id="binary-input" 
+              value="JECRC" 
+              maxlength="24"
+              class="w-full bg-zinc-900/90 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white font-mono focus:outline-none focus:border-emerald-500/60 transition-colors"
+              placeholder="Type anything (e.g. Somya, JECRC, Code)..."
+              oninput="convertDataRepresentation()"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <!-- Binary Output Box -->
+            <div class="p-3.5 rounded-xl bg-zinc-900/60 border border-white/5">
+              <div class="flex items-center justify-between text-xs text-zinc-400 mb-1.5 font-mono">
+                <span>8-Bit ASCII Binary:</span>
+                <button onclick="copyToClipboard(document.getElementById('binary-output').innerText)" class="text-emerald-400 hover:text-emerald-300 text-[11px] flex items-center gap-1">
+                  <i data-lucide="copy" class="w-3 h-3"></i> Copy
+                </button>
+              </div>
+              <div id="binary-output" class="font-mono text-xs text-emerald-400 break-words leading-relaxed select-all">01001010 01000101 01000011 01010010 01000011</div>
+            </div>
+
+            <!-- Hexadecimal Output Box -->
+            <div class="p-3.5 rounded-xl bg-zinc-900/60 border border-white/5">
+              <div class="flex items-center justify-between text-xs text-zinc-400 mb-1.5 font-mono">
+                <span>Hexadecimal (Base 16):</span>
+                <button onclick="copyToClipboard(document.getElementById('hex-output').innerText)" class="text-sky-400 hover:text-sky-300 text-[11px] flex items-center gap-1">
+                  <i data-lucide="copy" class="w-3 h-3"></i> Copy
+                </button>
+              </div>
+              <div id="hex-output" class="font-mono text-xs text-sky-400 break-words leading-relaxed select-all">0x4A 0x45 0x43 0x52 0x43</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. FEATURED PROJECTS & COURSEWORK -->
+    <!-- ========================================================================= -->
+    <section id="projects" class="space-y-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono text-sky-400 uppercase tracking-widest">
+            <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+            <span>Engineering Portfolio</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">Featured Projects &amp; Coursework</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-md">
+          Curated projects highlighting systems programming, digital literacy research, and modern web interfaces.
+        </p>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Project Card 1: Digital Literacy Web Presence Portal -->
+        <div class="group backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <!-- Status Badge & Date -->
+            <div class="flex items-center justify-between text-xs text-zinc-400 mb-4">
+              <span class="font-mono text-[11px] text-emerald-400 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Live Deployment
+              </span>
+              <span class="text-zinc-400 font-mono text-[11px]">Academic 2026</span>
+            </div>
+
+            <!-- Title & 2-Line Description -->
+            <h3 class="text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors">
+              Digital Literacy Web Presence Portal
+            </h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-2 leading-relaxed">
+              A minimalist, accessible single-page engineering portfolio built for JECRC University's Digital Literacy course with interactive data representation tools.
+            </p>
+
+            <!-- Highlights -->
+            <ul class="mt-4 space-y-1.5 text-xs text-zinc-400">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Responsive Bento grid layout &amp; hairline micro-interactions</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Real-time ASCII binary &amp; hexadecimal live lab</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">HTML5</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">Tailwind CSS</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">JavaScript</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">Vercel</span>
+            </div>
+
+            <!-- Action Pill Buttons -->
+            <div class="flex items-center gap-2">
+              <a href="#" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 text-white py-2 rounded-xl transition-colors">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                <span>Live Preview</span>
+              </a>
+              <!-- [CUSTOMIZE: GitHub Project Link] -->
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-colors" title="View GitHub Repository">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2: CyberEthics & Digital Footprint Research Breakdown -->
+        <div class="group backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-zinc-400 mb-4">
+              <span class="font-mono text-[11px] text-sky-400 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Course Research
+              </span>
+              <span class="text-zinc-400 font-mono text-[11px]">Academic Year 1</span>
+            </div>
+
+            <h3 class="text-lg font-semibold text-white group-hover:text-sky-400 transition-colors">
+              CyberEthics &amp; Digital Privacy Breakdown
+            </h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-2 leading-relaxed">
+              Interactive educational presentation analyzing student online safety, password entropy equations, metadata leak risks, and data sovereignty ethics.
+            </p>
+
+            <ul class="mt-4 space-y-1.5 text-xs text-zinc-400">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5"></i>
+                <span>Comparative matrix of cybersecurity threat models</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5"></i>
+                <span>Actionable digital hygiene checklist for undergrads</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">Research</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">Cyber Safety</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">Data Ethics</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">LaTeX</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button onclick="openProjectModal('cyberethics')" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 text-white py-2 rounded-xl transition-colors">
+                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                <span>Read Overview</span>
+              </button>
+              <!-- [CUSTOMIZE: Project GitHub Repo] -->
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-colors" title="View Source">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3: C/Python Radix Converter & Matrix Calculator CLI -->
+        <div class="group backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-zinc-400 mb-4">
+              <span class="font-mono text-[11px] text-amber-400 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Systems CLI
+              </span>
+              <span class="text-zinc-400 font-mono text-[11px]">Systems Lab</span>
+            </div>
+
+            <h3 class="text-lg font-semibold text-white group-hover:text-amber-400 transition-colors">
+              Radix Converter &amp; Matrix Calculator
+            </h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-2 leading-relaxed">
+              High-performance CLI tool developed in C and Python for number system conversions (Base 2, 8, 10, 16) and Engineering Mathematics matrix operations.
+            </p>
+
+            <ul class="mt-4 space-y-1.5 text-xs text-zinc-400">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5"></i>
+                <span>Fast bitwise operations &amp; memory-conscious C logic</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5"></i>
+                <span>Determinant, transpose &amp; inversion computation</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">C</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">Python</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">Algorithms</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">CLI</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button onclick="openProjectModal('radix')" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 text-white py-2 rounded-xl transition-colors">
+                <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                <span>View Specs</span>
+              </button>
+              <!-- [CUSTOMIZE: Project GitHub Repo] -->
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-colors" title="View Source">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. ACADEMIC JOURNEY & MILESTONES (Vertical Timeline) -->
+    <!-- ========================================================================= -->
+    <section id="coursework" class="space-y-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono text-violet-400 uppercase tracking-widest">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            <span>JECRC University · B.Tech CSE</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">Academic Journey &amp; Coursework</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-md">
+          Structured progression of foundational courses taken during the first year of the engineering curriculum.
+        </p>
+      </div>
+
+      <!-- Vertical Timeline Component -->
+      <div class="relative border-l border-white/10 ml-3 sm:ml-6 pl-6 sm:pl-8 space-y-8">
+
+        <!-- Coursework 1: Digital Literacy -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-emerald-400 group-hover:scale-125 transition-transform duration-200"></div>
+          <div class="backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono text-emerald-400 font-medium">Core Course · Semester 1</span>
+              <span class="text-[11px] font-mono text-zinc-400 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/5">Submitted Project</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-semibold text-white mt-1.5">Digital Literacy &amp; Cyber Hygiene</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">
+              Operating system fundamentals, file directory structures, collaborative cloud office suites, ethical digital communication, and internet security standards.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-zinc-400">
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">OS Architecture</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Information Security</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Git &amp; GitHub</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Data Privacy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coursework 2: Computer Programming -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-sky-400 group-hover:scale-125 transition-transform duration-200"></div>
+          <div class="backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono text-sky-400 font-medium">Core Engineering · Semester 1 &amp; 2</span>
+              <span class="text-[11px] font-mono text-zinc-400 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/5">Theory + Practical Lab</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-semibold text-white mt-1.5">Computer Programming &amp; Problem Solving</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">
+              Procedural programming in C (variables, loops, structures, arrays, dynamic memory allocation) and rapid algorithmic scripting in Python.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-zinc-400">
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">C Memory Mgmt</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Python Data Types</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Algorithm Complexity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coursework 3: Engineering Mathematics -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-amber-400 group-hover:scale-125 transition-transform duration-200"></div>
+          <div class="backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono text-amber-400 font-medium">Mathematical Foundations · Semester 1 &amp; 2</span>
+              <span class="text-[11px] font-mono text-zinc-400 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/5">Theory &amp; Tutorials</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-semibold text-white mt-1.5">Engineering Mathematics (Linear Algebra &amp; Calculus)</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">
+              Matrix transformations, eigenvalues, eigenvectors, differential calculus, series expansions, and vector spaces that form the bedrock of graphics and machine learning.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-zinc-400">
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Matrices &amp; Tensors</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Vector Calculus</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Discrete Math</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coursework 4: Digital Logic -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-violet-400 group-hover:scale-125 transition-transform duration-200"></div>
+          <div class="backdrop-blur-md bg-white/[0.02] border border-white/10 card-hover rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono text-violet-400 font-medium">Hardware Foundations · Semester 2</span>
+              <span class="text-[11px] font-mono text-zinc-400 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/5">Hardware Lab</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-semibold text-white mt-1.5">Digital Logic Design &amp; Computer Organization</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">
+              Combinational and sequential circuits, Boolean reduction via Karnaugh maps, multiplexers, flip-flops, registers, and basic CPU instruction cycles.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-zinc-400">
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">Boolean Algebra</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">K-Maps &amp; Circuits</span>
+              <span class="px-2.5 py-1 rounded-lg bg-zinc-900 border border-white/5 font-mono text-[11px]">ALU Operations</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. FOOTER & CONTACT SECTION -->
+    <!-- ========================================================================= -->
+    <section id="contact" class="pt-6">
+      <div class="backdrop-blur-xl bg-zinc-950/80 border border-white/10 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+        <!-- Ambient subtle accent glow inside card -->
+        <div class="absolute -right-24 -bottom-24 w-80 h-80 bg-sky-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-2xl space-y-6 relative z-10">
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 uppercase tracking-widest">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span>Get In Touch</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+            Let's connect &amp; build something meaningful.
+          </h2>
+
+          <p class="text-sm sm:text-base text-zinc-400 leading-relaxed">
+            Whether you want to discuss engineering coursework at JECRC University, collaborate on open-source initiatives, or connect regarding software projects—my inbox is always open.
+          </p>
+
+          <!-- Copy Email & Direct Email Action Buttons -->
+          <div class="pt-2 flex flex-wrap items-center gap-3">
+            <!-- One-Click Copy Email Button -->
+            <button onclick="copyEmail('SOMYAJHALANI@gmail.com')" class="inline-flex items-center gap-2.5 bg-white text-zinc-950 hover:bg-zinc-200 px-5 py-3 rounded-xl font-medium text-xs sm:text-sm transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98]">
+              <i data-lucide="copy" class="w-4 h-4 text-zinc-900"></i>
+              <span>Copy Email: SOMYAJHALANI@gmail.com</span>
+            </button>
+
+            <!-- Direct Mailto Link -->
+            <a href="mailto:SOMYAJHALANI@gmail.com?subject=Hello%20Somya%20-%20From%20Portfolio" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 px-5 py-3 rounded-xl font-medium text-xs sm:text-sm transition-colors">
+              <i data-lucide="mail" class="w-4 h-4 text-zinc-400"></i>
+              <span>Direct Email</span>
+            </a>
+          </div>
+
+          <!-- Academic Institution Badge -->
+          <div class="pt-4 flex items-center gap-3 text-xs text-zinc-400 border-t border-white/10">
+            <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+            <span>Department of Computer Science &amp; Engineering · JECRC University, Jaipur, Rajasthan</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================================= -->
+  <footer class="w-full border-t border-white/10 bg-zinc-950/80 backdrop-blur-md relative z-10 py-8 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
+      
+      <!-- Monogram & Attribution -->
+      <!-- [CUSTOMIZE: Copyright & Student Details] -->
+      <div class="flex items-center gap-2">
+        <span class="font-mono font-bold text-zinc-300">SJ</span>
+        <span class="text-zinc-600">/</span>
+        <span>&copy; 2026 Somya Jhalani. Built for Digital Literacy · JECRC University.</span>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="flex items-center gap-4">
+        <a href="#about" class="hover:text-zinc-200 transition-colors flex items-center gap-1">
+          <span>Back to Top</span>
+          <i data-lucide="arrow-up" class="w-3 h-3"></i>
+        </a>
+        <span class="text-zinc-700">·</span>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-200 transition-colors">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-200 transition-colors">LinkedIn</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- RESUME MODAL (Clean, Print-ready Academic CV) -->
+  <!-- ========================================================================= -->
+  <div id="resume-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div id="resume-modal-dialog" class="relative w-full max-w-2xl max-h-[90vh] bg-zinc-950 border border-white/15 rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-zinc-900/50">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
+          <span class="text-sm font-semibold text-white">Curriculum Vitae · Somya Jhalani</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="no-print inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors">
+            <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+            <span>Print / PDF</span>
+          </button>
+          <button onclick="closeResumeModal()" class="text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Printable Academic Resume) -->
+      <div id="resume-modal-content" class="p-6 sm:p-8 overflow-y-auto space-y-6 text-zinc-300 font-sans text-xs sm:text-sm">
+        
+        <!-- Header -->
+        <div class="border-b border-white/10 pb-4">
+          <h2 class="text-xl sm:text-2xl font-bold text-white">Somya Jhalani</h2>
+          <p class="text-xs text-emerald-400 font-mono mt-0.5">1st Year B.Tech Computer Science &amp; Engineering · JECRC University</p>
+          <div class="flex flex-wrap gap-3 mt-2 text-zinc-400 text-xs font-mono">
+            <span>Email: SOMYAJHALANI@gmail.com</span>
+            <span>·</span>
+            <span>Jaipur, Rajasthan, India</span>
+          </div>
+        </div>
+
+        <!-- Academic Profile -->
+        <div class="space-y-2">
+          <h3 class="text-xs font-mono text-zinc-400 uppercase tracking-widest font-semibold">Academic Education</h3>
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="font-medium text-white">Bachelor of Technology (B.Tech) - Computer Science &amp; Engineering</p>
+              <p class="text-xs text-zinc-400">JECRC University, Jaipur, Rajasthan</p>
+            </div>
+            <span class="text-xs font-mono text-zinc-400">2026 – Present</span>
+          </div>
+        </div>
+
+        <!-- Coursework & Digital Literacy -->
+        <div class="space-y-2">
+          <h3 class="text-xs font-mono text-zinc-400 uppercase tracking-widest font-semibold">Key Coursework (Year 1)</h3>
+          <ul class="list-disc list-inside space-y-1 text-zinc-400 text-xs">
+            <li>Digital Literacy: Computer Architecture, Cyber Hygiene, Digital Footprints &amp; Ethics</li>
+            <li>Computer Programming: C Language, Pointers, Memory Management, Algorithm Basics</li>
+            <li>Engineering Mathematics: Linear Algebra, Matrices, Calculus</li>
+            <li>Digital Logic Design: Logic Gates, Boolean Reduction, Combinational Circuits</li>
+          </ul>
+        </div>
+
+        <!-- Technical Skillset -->
+        <div class="space-y-2">
+          <h3 class="text-xs font-mono text-zinc-400 uppercase tracking-widest font-semibold">Technical Proficiencies</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-300">
+            <div><span class="text-zinc-400 font-mono">Languages:</span> C, Python, JavaScript, HTML5, CSS3</div>
+            <div><span class="text-zinc-400 font-mono">Tools:</span> Git, GitHub, Linux/Bash, VS Code, LaTeX</div>
+            <div><span class="text-zinc-400 font-mono">Productivity:</span> Obsidian, Google Workspace, MS 365</div>
+            <div><span class="text-zinc-400 font-mono">Concepts:</span> Data Representation, Binary/Hex, Cyber Hygiene</div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="space-y-2">
+          <h3 class="text-xs font-mono text-zinc-400 uppercase tracking-widest font-semibold">Featured Course Projects</h3>
+          <div class="space-y-2 text-xs">
+            <div>
+              <p class="font-medium text-white">Digital Literacy Portfolio &amp; Interactive Lab</p>
+              <p class="text-zinc-400">Engineered a responsive single-page portal with an interactive real-time ASCII binary &amp; hexadecimal converter.</p>
+            </div>
+            <div>
+              <p class="font-medium text-white">CyberEthics &amp; Digital Footprint Audit</p>
+              <p class="text-zinc-400">Research report evaluating student cybersecurity protocols, password entropy, and data privacy safeguards.</p>
+            </div>
+            <div>
+              <p class="font-medium text-white">Radix Converter &amp; Matrix Calculator CLI</p>
+              <p class="text-zinc-400">High-performance CLI utility for multi-radix conversions and linear algebra transformations in C and Python.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- PROJECT OVERVIEW MODAL -->
+  <!-- ========================================================================= -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative w-full max-w-lg bg-zinc-950 border border-white/15 rounded-2xl shadow-2xl overflow-hidden p-6 space-y-4 animate-in fade-in zoom-in-95 duration-200">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <h4 id="project-modal-title" class="text-base font-semibold text-white">Project Overview</h4>
+        <button onclick="closeProjectModal()" class="text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-white/10">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <div id="project-modal-body" class="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="pt-3 border-t border-white/10 flex justify-end">
+        <button onclick="closeProjectModal()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-medium transition-colors">
+          Close Overview
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT LOGIC & MICRO-INTERACTIONS -->
+  <!-- ========================================================================= -->
+  <script>
+    // Initialize Lucide Icons safely
+    if (window.lucide && typeof lucide.createIcons === 'function') {
+      lucide.createIcons();
+    }
+
+    // Copy to Clipboard with Toast Notification
+    function copyEmail(email) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          showToast("Copied: " + email);
+        }).catch(() => fallbackCopy(email));
+      } else {
+        fallbackCopy(email);
+      }
+    }
+
+    function copyToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast("Copied to clipboard!");
+        }).catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast("Copied: " + text);
+      } catch (e) {
+        showToast("Press Ctrl+C to copy");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerText = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
+    }
+
+    function closeMobileMenu() {
+      if (mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      }
+    }
+
+    // Live Data Representation Converter (Digital Literacy Interactive Component)
+    function convertDataRepresentation() {
+      const input = document.getElementById('binary-input').value;
+      const binaryOutput = document.getElementById('binary-output');
+      const hexOutput = document.getElementById('hex-output');
+
+      if (!input || input.length === 0) {
+        binaryOutput.innerText = '00000000';
+        hexOutput.innerText = '0x00';
+        return;
+      }
+
+      let binaryArray = [];
+      let hexArray = [];
+
+      for (let i = 0; i < input.length; i++) {
+        const charCode = input.charCodeAt(i);
+        const bin = charCode.toString(2).padStart(8, '0');
+        const hex = '0x' + charCode.toString(16).toUpperCase().padStart(2, '0');
+        binaryArray.push(bin);
+        hexArray.push(hex);
+      }
+
+      binaryOutput.innerText = binaryArray.join(' ');
+      hexOutput.innerText = hexArray.join(' ');
+    }
+
+    // Resume Modal Logic
+    function openResumeModal() {
+      document.getElementById('resume-modal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeResumeModal() {
+      document.getElementById('resume-modal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // Project Modals
+    const projectDetails = {
+      cyberethics: {
+        title: "CyberEthics & Digital Privacy Breakdown",
+        content: `
+          <p>This academic coursework presentation explores key vulnerabilities that first-year students encounter in the modern digital sphere.</p>
+          <ul class="list-disc list-inside space-y-1.5 text-zinc-400 text-xs">
+            <li><strong>Password Entropy &amp; Cryptography:</strong> Quantitative analysis of bit-length entropy and brute-force timelines under modern GPU compute.</li>
+            <li><strong>Digital Identity &amp; Footprint:</strong> How persistent metadata, cookies, and telemetry compromise online confidentiality.</li>
+            <li><strong>Digital Rights &amp; Licensing:</strong> Clear distinctions between GNU GPL, MIT, and Apache 2.0 open-source compliance.</li>
+          </ul>
+          <p class="text-zinc-400 pt-2 font-mono text-[11px]">Submitted for: Digital Literacy (CSE 101) · JECRC University</p>
+        `
+      },
+      radix: {
+        title: "Radix Converter & Matrix Calculator CLI",
+        content: `
+          <p>A dual-language utility built to bridge theoretical Discrete Mathematics and low-level C programming.</p>
+          <ul class="list-disc list-inside space-y-1.5 text-zinc-400 text-xs">
+            <li><strong>Number Radix Conversion:</strong> Converts integers and two's complement fractions across Binary (Base 2), Octal (Base 8), Decimal (Base 10), and Hexadecimal (Base 16).</li>
+            <li><strong>Matrix Transformations:</strong> Handles dynamic NxN matrix multiplications, transpose, and determinant calculation via Gaussian elimination.</li>
+            <li><strong>Memory Conscious:</strong> Zero external dependencies, written in ANSI C with test harness in Python.</li>
+          </ul>
+          <p class="text-zinc-400 pt-2 font-mono text-[11px]">Laboratory: Programming in C &amp; Engineering Mathematics</p>
+        `
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectDetails[key];
+      if (!data) return;
+      document.getElementById('project-modal-title').innerText = data.title;
+      document.getElementById('project-modal-body').innerHTML = data.content;
+      document.getElementById('project-modal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeProjectModal() {
+      document.getElementById('project-modal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // Close modals when clicking backdrop or ESC
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeResumeModal();
+        closeProjectModal();
+      }
+    });
+
+    document.getElementById('resume-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'resume-modal') closeResumeModal();
+    });
+
+    document.getElementById('project-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'project-modal') closeProjectModal();
+    });
+  </script>
+
+</body>
+</html>

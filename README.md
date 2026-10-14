@@ -5,6 +5,8 @@
 > **Degree:** Bachelor of Technology (B.Tech) - Computer Science & Engineering (1st Year)  
 > **Course:** Digital Literacy & Modern Computing  
 > **Email:** [SOMYAJHALANI@gmail.com](mailto:SOMYAJHALANI@gmail.com)  
+> **Live Website:** [https://jalani-nu.vercel.app](https://jalani-nu.vercel.app)  
+> **GitHub Repository:** [https://github.com/soulcodesmith/somya-jhalani-portfolio](https://github.com/soulcodesmith/somya-jhalani-portfolio)  
 
 ---
 
